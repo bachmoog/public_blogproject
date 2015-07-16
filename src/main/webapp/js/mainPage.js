@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 function loadBlogTitles() {
     $.ajax({
-        url: "/Group3Capstone/PubBlogs"
+        url: "/PubBlogs"
     }).success(function (data, status) {
         fillMenuTitles(data, status);
     });
@@ -42,7 +42,7 @@ function loadBlogTitles() {
 
 function loadBlogCategories() {
     $.ajax({
-        url: "/Group3Capstone/Categories"
+        url: "/Categories"
     }).success(function (data, status) {
         fillCategories(data, status);
     });
@@ -50,7 +50,7 @@ function loadBlogCategories() {
 
 function loadBlogTags() {
     $.ajax({
-        url: "/Group3Capstone/Hashtags"
+        url: "/Hashtags"
     }).success(function (data, status) {
         fillHashtags(data, status);
     });
@@ -116,16 +116,16 @@ function clearAjaxMenu() {
 }
 
 function goToBlog(id) {
-    window.location.replace("/Group3Capstone/EachBlog/" + id);
+    window.location.replace("/EachBlog/" + id);
 
 }
 
 function goToCategory(id) {
-    window.location.replace("/Group3Capstone/EachBlog/cat?categoryId=" + id);
+    window.location.replace("/EachBlog/cat?categoryId=" + id);
 }
 
 function goToHashtag(id) {
-    window.location.replace("/Group3Capstone/EachBlog/tag?hashtagId=" + id);
+    window.location.replace("/EachBlog/tag?hashtagId=" + id);
 }
 
 
