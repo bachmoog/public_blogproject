@@ -209,7 +209,7 @@ public class HomeControllerAndrew {
         return "EachBlog";
     }
 
-    @RequestMapping(value = "PubBlogs", method = RequestMethod.GET)
+    @RequestMapping(value = "/PubBlogs", method = RequestMethod.GET)
     @ResponseBody
     public List<Blog> getPubBlogs() {
         //return blogDAO.getAllBlogs();  //Mike Adams: replacing with publish filtering
@@ -225,31 +225,31 @@ public class HomeControllerAndrew {
         return pubBlogs;
     }
 
-    @RequestMapping(value = "Blogs", method = RequestMethod.GET)
+    @RequestMapping(value = "/Blogs", method = RequestMethod.GET)
     @ResponseBody
     public List<Blog> getAllBlogs() {
         return blogDAO.getAllBlogs();  //Mike Adams: replacing with publish filtering
 
     }
 
-    @RequestMapping(value = "Categories", method = RequestMethod.GET)
+    @RequestMapping(value = "/Categories", method = RequestMethod.GET)
     @ResponseBody
     public List<Category> getAllCategories() {
         return blogDAO.getListOfCategories();
     }
 
-    @RequestMapping(value = "Hashtags", method = RequestMethod.GET)
+    @RequestMapping(value = "/Hashtags", method = RequestMethod.GET)
     @ResponseBody
     public List<Hashtag> getAllTags() {
         return blogDAO.getListOfHashtags();
     }
 
-    @RequestMapping(value = "Category", method = RequestMethod.GET)
+    @RequestMapping(value = "/Category", method = RequestMethod.GET)
     public String addCategory() {
         return "addCategory";
     }
 
-    @RequestMapping(value = "Category", method = RequestMethod.POST)
+    @RequestMapping(value = "/Category", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ResponseBody
     public void addCategory(@RequestBody Category category) {
@@ -261,7 +261,7 @@ public class HomeControllerAndrew {
         blogDAO.addCategory(category);
     }
 
-    @RequestMapping(value = "hashTag", method = RequestMethod.PUT)
+    @RequestMapping(value = "/hashTag", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void addTag(HttpServletRequest req, Model model, @RequestBody Hashtag hashtag) {
 
@@ -276,7 +276,7 @@ public class HomeControllerAndrew {
 //        
 //        return "mainPage";
 //    }
-    @RequestMapping(value = "EachBlog/cat", method = RequestMethod.GET)
+    @RequestMapping(value = "/EachBlog/cat", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String catSearch(HttpServletRequest req, Model model) {
         int categoryId = Integer.parseInt(req.getParameter("categoryId"));
@@ -300,7 +300,7 @@ public class HomeControllerAndrew {
 
     }
 
-    @RequestMapping(value = "EachBlog/tag", method = RequestMethod.GET)
+    @RequestMapping(value = "/EachBlog/tag", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String tagSearch(HttpServletRequest req, Model model) {
         int hashtagId = Integer.parseInt(req.getParameter("hashtagId"));
@@ -324,19 +324,19 @@ public class HomeControllerAndrew {
         return "mainPage";
     }
 
-    @RequestMapping(value = "Category/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/Category/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable("id") int id) {
         blogDAO.deleteCategory(id);
     }
 
-    @RequestMapping(value = "Blog/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/Blog/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteBlog(@PathVariable("id") int id) {
         blogDAO.deleteBlog(id);
     }
 
-    @RequestMapping(value = "EditBlog/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/EditBlog/{id}", method = RequestMethod.POST)
     public String editBlog(@PathVariable("id") int id, @ModelAttribute Blog blog, HttpServletRequest req, Model model) {
 
         String y = req.getParameter("title");
@@ -411,12 +411,12 @@ public class HomeControllerAndrew {
 
     }
 
-    @RequestMapping(value = "edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
     public String backToIndex() {
         return "mainPage";
     }
 
-    @RequestMapping(value = "EditBlog/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/EditBlog/{id}", method = RequestMethod.GET)
     public String goToEdit(@PathVariable("id") int id, Model model) {
         model.addAttribute("blog", blogDAO.getBlogById(id));
         model.addAttribute("categoryList", blogDAO.getListOfCategories());
@@ -424,18 +424,18 @@ public class HomeControllerAndrew {
         return "EditBlog";
     }
 
-    @RequestMapping(value = "AdminStaticPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/AdminStaticPage", method = RequestMethod.GET)
     public String adminStaticPage(HttpServletRequest req, Model model) {
         return "AdminStaticPage";
     }
 
-    @RequestMapping(value = "CreateStaticPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/CreateStaticPage", method = RequestMethod.GET)
     public String createStaticPage(HttpServletRequest req, Model model) {
 
         return "AddStaticPage";
     }
 
-    @RequestMapping(value = "AddStaticPage", method = RequestMethod.POST)
+    @RequestMapping(value = "/AddStaticPage", method = RequestMethod.POST)
     public String addStaticPage(HttpServletRequest req, Model model) {
         /**
          * ********** Mike Adams, Static page functionality code********
@@ -469,7 +469,7 @@ public class HomeControllerAndrew {
         return "AdminStaticPage";
     }
 
-    @RequestMapping(value = "ReadStaticPage/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/ReadStaticPage/{id}", method = RequestMethod.GET)
     public String readStaticPage(@PathVariable("id") int staticPageId, HttpServletRequest req, Model model) {
         /**
          * ********** Mike Adams, Static page functionality code********
