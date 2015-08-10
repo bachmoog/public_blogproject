@@ -45,6 +45,8 @@
         
         <!-- #3f - Access to all other controller endpoints require user role -->
         <intercept-url pattern="/**" access="ROLE_USER" />
+        <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
+
     </http>
     <!-- #4 - Authentication Manager config -->
     <authentication-manager>
