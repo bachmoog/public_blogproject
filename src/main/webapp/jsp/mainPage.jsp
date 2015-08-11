@@ -14,6 +14,8 @@
 
         <!-- SWC Icon -->
         <link rel="shortcut icon" href="about:blank">
+
+        
         <script src="${pageContext.request.contextPath}/js/loadStaticPages.js"></script>
 
     </head>
