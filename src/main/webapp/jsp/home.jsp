@@ -30,7 +30,7 @@
         </div>
 
         <div class="container">
-            <p><a href="${pageContext.request.contextPath}/login">Log In</a></p>
+            <p>Login by clicking on the "Blog" tab.</p>
 
             <h3>
                 Site Owner  - The Coding Geekette
