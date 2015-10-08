@@ -39,6 +39,8 @@
             </div>
             <div class="col-lg-9" class="container">
                 <h1><i><b>Capstone Blog</b></i></h1>
+                <h4>Source code available in <a href="https://github.com/bachmoog/public_blogproject">github account</a></h4>
+
                 <hr/>
             </div>
             <div class="col-lg-3" class="container">

@@ -17,7 +17,7 @@
         <div class="container">
             <h1>Capstone Blog Login</h1>
             <div class="row">
-                <h4>Source code available in <a href="https://github.com/bachmoog/public_vendingmachine">github account</a></h4>
+                <h4>Source code available in <a href="https://github.com/bachmoog/public_blogproject">github account</a></h4>
             </div>
             <hr/>
             <div class="navbar">
